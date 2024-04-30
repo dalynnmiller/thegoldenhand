@@ -1,54 +1,145 @@
 <!DOCTYPE html>
 <html>
-        <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-        <title> The Golden Hand </title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Oswald:wght@700&display=swap');
-        
-        </style>
-    </head>
-    <body>
-   
-        <div class="DefaultCycle" style="width: 1080px; height: 1920px; position: relative; background: linear-gradient(180deg, #4A0202 0%, #270000 68%, black 100%)">
-            <img class="DrawnHands" style="width: 1080px; height: 1920px; left: 0px; top: 0px; position: absolute; opacity: 0.50" src="https://raw.githubusercontent.com/dalynnmiller/thegoldenhand/main/Untitled_Artwork%2086.png" />
-            <img class="HandImage" style="width: 1080px; height: 935px; left: 0px; top: 985px; position: absolute; opacity: 0.30" src="https://raw.githubusercontent.com/dalynnmiller/thegoldenhand/main/NicePng_hands-png_209768.png" />
-            <img class="Solidhands" style="width: 1080px; height: 935px; left: 0px; top: 985px; position: absolute; opacity: 0.30" src="" />
-            <div class="Question" style="width: 680px; height: 221px; left: 200px; top: 397px; position: absolute; text-align: center; color: white; font-size: 70px; font-family: Oswald; font-weight: 700; word-wrap: break-word">How is our perception of history shaped by whose voices tell it?</div>
-            <div class="Phonenumber" style="width: 697px; height: 142px; left: 191px; top: 731px; position: absolute; text-align: center; color: white; font-size: 30px; font-family: Open Sans; font-style: italic; font-weight: 300; word-wrap: break-word">text your thoughts to +1 (833) 381-0726</div>
-            <img class="Characters" style="width: 870px; height: 1101px; left: 105px; top: -34px; position: absolute" src="https://raw.githubusercontent.com/dalynnmiller/thegoldenhand/main/Untitled_Artwork%2010.gif" />
-            <div class="Translationpinyin" style="width: 577px; height: 346px; left: 251px; top: 272px; position: absolute; text-align: center; color: #FCEFA3; font-size: 40px; font-family: Open Sans; font-style: italic; font-weight: 400; word-wrap: break-word">jīn shǒu: ‘The Golden Hand’</div>
-            <div class="HoldMyHand" style="width: 764px; height: 220px; left: 158px; top: 1616px; position: absolute; text-align: center; color: #FAC300; font-size: 80px; font-family: Oswald; font-weight: 700; word-wrap: break-word">hold my hand.</div>
-          </div>
-    
-          <div class="Displaymessage" style="width: 675px; height: 424px; left: 218px; top: 960px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Oswald; font-weight: 300; word-wrap: break-word">Placeholder Message</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>The Golden Hand</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,400&family=Oswald:wght@400;700&display=swap');
 
-        <script>
-            const displayMessage = document.querySelector(".Displaymessage");
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #270000 0%, #4A0202 31%, #330101 70%, black 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            function fetchMessages() {
-                fetch('/messages')
-                    .then(response => response.json())
-                    .then(messages => {
-                        let currentIndex = 0;
+        .DefaultCycle {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            background: inherit;
+        }
 
-                        function cycleMessages() {
-                            displayMessage.textContent = messages[currentIndex];
-                            currentIndex = (currentIndex + 1) % messages.length;
-                        }
+        img, .Question, .Displaymessage, .Phonenumber, .Translationpinyin, .HoldMyHand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
 
-                        cycleMessages();
-                        setInterval(cycleMessages, 10000); // Update every 5 seconds (adjust as needed)
-                    })
-                    .catch(error => {
-                        console.error('Error fetching messages:', error);
-                    });
+        .Dgifmaker817521 {
+            width: 763px;
+            height: 763px;
+            top: 888px;
+        }
+
+        .UntitledArtwork1411 {
+            width: 1200px;
+            height: auto;
+            top: 50px;
+        }
+
+        .Characters {
+            width: 900px;
+            height: auto;
+            top: 8%;
+        }
+
+        .Question {
+            width: 90%;
+            top: 33%;
+            font-size: 100px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: white;
+        }
+
+        .Displaymessage {
+            width: 90%;
+            top: 1154px;
+            font-size: 48px;
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            color: white;
+            opacity: 0; /* Initial opacity for fade effect */
+            transition: opacity 1s; /* Smooth transition for fading */
+        }
+
+        .Phonenumber {
+            width: 90%;
+            top: 1741px;
+            font-size: 45px;
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            color: white;
+        }
+
+        .Translationpinyin {
+            width: 90%;
+            top: 28%;
+            font-size: 45px;
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            color: #FDD900;
+        }
+
+        .HoldMyHand {
+            width: 90%;
+            top: 1578px;
+            font-size: 95px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #FDD900;
+        }
+    </style>
+</head>
+<body>
+    <div class="DefaultCycle">
+        <img class="Dgifmaker817521" src="https://github.com/dalynnmiller/thegoldenhand/blob/main/3dgifmaker81752.gif?raw=true" alt="Placeholder Image" />
+        <img class="UntitledArtwork1411" src="https://github.com/dalynnmiller/thegoldenhand/blob/main/Untitled_Artwork%20141.png?raw=true" alt="Handprints" />
+        <img class="Characters" src="https://github.com/dalynnmiller/thegoldenhand/blob/main/Untitled_Artwork%2010.gif?raw=true" alt="Characters Image" />
+        <div class="Question">
+            How is our perception of history shaped by whose voices tell it?
+        </div>
+        <div class="Displaymessage">
+            <!-- Initial text will be replaced by JavaScript -->
+        </div>
+        <div class="Phonenumber">
+            text your thoughts to +1 (833) 381-0726
+        </div>
+        <div class="Translationpinyin">
+            jīn shǒu: ‘The Golden Hand’
+        </div>
+        <div class="HoldMyHand">
+            hold my hand.
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const displayMessage = document.querySelector('.Displaymessage');
+            const messages = [
+                "Mainstream history has a tendency to erase the voices of the very laborers who are so instrumental in shaping it. It’s important to not let the context behind these histories get swept under the rug.",
+                "Understanding history requires us to listen to all voices, especially those that have been historically marginalized.",
+                "Each perspective on history is like a piece of a larger puzzle. Together, they reveal the full picture."
+            ];
+            let currentIndex = 0;
+
+            function cycleMessages() {
+                displayMessage.style.opacity = 0; // Fade out current message
+                setTimeout(() => {
+                    displayMessage.innerHTML = messages[currentIndex];
+                    displayMessage.style.opacity = 1; // Fade in new message
+                    currentIndex = (currentIndex + 1) % messages.length;
+                    setTimeout(cycleMessages, 12000); // Set timeout for the next message after 10 seconds display + 2 seconds for fade
+                }, 2000); // Wait 2 seconds before changing text and fading in
             }
 
-            fetchMessages();
-        </script>
-    </body>
+            cycleMessages(); // Start the message cycle
+        });
+    </script>
+</body>
 </html>
-
-
